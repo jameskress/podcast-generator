@@ -5,8 +5,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     git 
 
-RUN python3 -m venv test-venv
-RUN test-venv/bin/pip3 install PyYAML
+RUN pip3 --break-system-packages install PyYAML
 
 COPY feed.py /usr/bin/feed.py
 COPY entrypoint.sh /entrypoint.sh
